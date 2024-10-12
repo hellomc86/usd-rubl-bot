@@ -2,7 +2,8 @@ const TelegramBot = require('node-telegram-bot-api');
 const axios = require('axios');
 
 // Ваш токен Телеграм-бота
-const token = '7418887312:AAERMl_wgXJrwZfZEffLMilSJmDL3BLznlg';
+
+const token = process.env.TELEGRAM_TOKEN;
 
 // Создаем экземпляр бота
 const bot = new TelegramBot(token);
