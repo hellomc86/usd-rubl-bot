@@ -42,9 +42,7 @@ bot.onText(/\/start/, (msg) => {
 // Обработчик сообщений
 bot.on('message', async (msg) => {
   const chatId = msg.chat.id;
-  console.log(chatId);
-  console.log(msg);
-
+  
   // Если имя еще не сохранено, запрашиваем и сохраняем его
   if (userStates[chatId] === 'awaiting_name') {
     userName = msg.text;
