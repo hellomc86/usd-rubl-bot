@@ -10,7 +10,7 @@ require('dotenv').config();
 const token = process.env.TELEGRAM_TOKEN;
 
 // Создаем экземпляр бота
-const bot = new TelegramBot(token);
+const bot = new TelegramBot(token,  { polling: true });
 
 const app = express();
 app.use(bodyParser.json());
