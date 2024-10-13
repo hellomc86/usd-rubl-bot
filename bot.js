@@ -5,7 +5,7 @@ const axios = require('axios');
 require('dotenv').config();
 
 
-// Ваш токен Телеграм-бота
+// токен Телеграм-бота
 
 const token = process.env.TELEGRAM_TOKEN;
 
@@ -40,6 +40,16 @@ bot.onText(/\/start/, (msg) => {
 
   bot.sendMessage(chatId, 'Добрый день. Как вас зовут?');
 });
+
+// Обработчик команды /start
+bot.onText(/\/stop/, (msg) => {
+  const chatId = msg.chat.id;
+  // Сбрасываем состояние пользователя
+  userStates[chatId] = '';
+
+  bot.sendMessage(chatId, 'Пока!');
+});
+
 
 // Обработчик сообщений
 bot.on('message', async (msg) => {
